@@ -16,17 +16,17 @@ jobs:
               run: npm ci
 
             - name: Run Lint
-              run: npm lint
+              run: npm run lint
 
             - name: Build NodeJs
-              run: npm build
+              run: npm run build
               
             - name: Test NodeJS
-              run: npm test
+              run: npm run test
               
             - name: Deploying Code
               run: echo "Code Deployed Successfully!"  
-              
+
 
 
             
