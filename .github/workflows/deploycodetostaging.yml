@@ -1,5 +1,5 @@
 name: Deploying Project
-on: workflow_dispatch
+on: [push,workflow_dispatch]
 jobs:
     FirstJob:
         runs-on: ubuntu-latest
@@ -22,6 +22,8 @@ jobs:
         needs: FirstJob
         runs-on: ubuntu-latest
         steps:
+            - name: Print a message
+              run: echo "Hello brother" 
             
               
             
