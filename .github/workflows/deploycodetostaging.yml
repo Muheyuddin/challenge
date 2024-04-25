@@ -1,0 +1,30 @@
+name: Deploying Project
+on: workflow_dispatch
+jobs:
+    FirstJob:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get Repo Code
+              uses: actions/checkout@v4
+
+            - name: Install NodeJS
+              uses: actions/setup-node@v3
+              with: 
+                node-version: 18
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Run tests
+              run: npm test
+
+    SecondJob:
+        needs: FirstJob
+        runs-on: ubuntu-latest
+        steps:
+            
+              
+            
+
+
+              
