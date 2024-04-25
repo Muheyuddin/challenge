@@ -1,5 +1,5 @@
-name: Deploying Project
-on: [push,workflow_dispatch]
+name: Deploying NodeJS Code
+on: [push]
 jobs:
     FirstJob:
         runs-on: ubuntu-latest
@@ -15,15 +15,20 @@ jobs:
             - name: Install dependencies
               run: npm ci
 
-            - name: Run tests
-              run: npm test
+            - name: Run Lint
+              run: npm lint
 
-    SecondJob:
-        needs: FirstJob
-        runs-on: ubuntu-latest
-        steps:
-            - name: Print a message
-              run: echo "Hello brother" 
+            - name: Build NodeJs
+              run: npm build
+              
+            - name: Test NodeJS
+              run: npm test
+              
+            - name: Deploying Code
+              run: echo "Code Deployed Successfully!"  
+              
+
+
             
               
             
